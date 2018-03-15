@@ -41,4 +41,6 @@ Below are the calculator object's methods.
 - **Calculator.evaluate();**
   
   This method evaluates the input and returns the output as either an error message or an answer.
-  
+  
+# Contributors
+  @Yogmemo
