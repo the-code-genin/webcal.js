@@ -9,31 +9,36 @@ To install the library simply include it in your webpage using the script tag.
 # How To Use
 After including the library in your webpage, in another script tag create a new calculator object passing the the ID of the output element(**A paragraph or div is recommended**) as an argument. i.e
 
-<script>
-   var Calc = new Calculator(output ID);
-<script>
+__<script>var Calc = new Calculator(output ID);<script>__
 
 Then map the calculator object's methods to html elements. i.e
 
-<button onclick="Calc.inputDigit('9')">9</button>
-<button onclick="Calc.inputOperator('+')">+</button>
+__\<button onclick="Calc.inputDigit('9')">9\</button>__
+
+__\<button onclick="Calc.inputOperator('+')">+\</button>__
 
 Check out the examples to see working demonstrations.
 
 ## Calculator controls
 Below are the calculator object's methods.
 
--Calculator.inputDigit(digit);
-  This method is used for inputting digit characters into the calculator.
+- **Calculator.inputDigit(digit);**
+
+   This method is used for inputting digit characters into the calculator.
    digit = ('0','1','2','3','4','5','6','7','8','9','.')
    **Note:** Digits must be inputted as single character strings.
--Calculator.inputOperator(operator);
-  This method is used for inputting operator characters into the calculator.
+- **Calculator.inputOperator(operator);**
+
+   This method is used for inputting operator characters into the calculator.
    standard operators = ('/','*','+','-','(',')')
-   **Note:** Operators must be inputted as single character strings.
--Calculator.del();
-  This method is used for deleting the last character entered into the calculator.
--Calculator.clearScreen();
-  This method is used to clear all characters on the screen.
--Calculator.evaluate();
+   **Note:** Operators must be inputted as single character strings.
+- **Calculator.del();**
+
+  This method is used for deleting the last character entered into the calculator.
+- **Calculator.clearScreen();**
+
+  This method is used to clear all characters on the screen.
+- **Calculator.evaluate();**
+  
   This method evaluates the input and returns the output as either an error message or an answer.
+  
