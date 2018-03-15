@@ -11,7 +11,7 @@ Calculator.prototype.evaluate =
 		/*Check for syntax errors errors*/
 		var check = this.checkForSyntaxError();
 		/*If an error was found*/
-		if(check) this.message = "Pre Syntax Error";
+		if(check) this.message = "Syntax Error";
 		/*If no error was found then equation is valid*/
 		else{
 			/*Handle all brackets available starting from the lowests*/
