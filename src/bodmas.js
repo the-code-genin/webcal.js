@@ -16,6 +16,16 @@ Calculator.prototype.bodmas=
 			/*When none is found*/
 			else return false
 		}
+		/*Handle square-roots in the temporary equation until none are left*/
+		function handleRaisedToPower(){
+			var i = newEquation.indexOf('^');
+			if(i != -1){
+				var pow = Math.pow(newEquation[i-1],newEquation[i+1]);
+				newEquation.splice(i-1,3,pow);
+				return true;
+			}
+			else return false;
+		}
 		/*Handle divisions in the temporary equation until none are left*/
 		function handleDivision(){
 			var i = newEquation.indexOf('/');
@@ -44,6 +54,7 @@ Calculator.prototype.bodmas=
 		/*Order of operations*/
 		while(handleSquareRoot()){}
 		newEquation = this.perfect(newEquation);
+		while(handleRaisedToPower()){}
 		while(handleDivision()){}
 		while(handleMultiplication()){}
 		/*Handle additions and subtractions*/

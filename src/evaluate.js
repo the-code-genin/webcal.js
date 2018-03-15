@@ -88,7 +88,7 @@ Calculator.prototype.perfect=
 						}
 					break;
 				default: 
-					if(equation[i] == '*' | equation[i] == '/' | equation[i] == '√'){
+					if(equation[i] == '*' | equation[i] == '/' | equation[i] == '√' | equation[i] == '^'){
 						newEquation.push(equation[i]);
 					}
 					else if(equation[i-1] != '-' & equation[i-1] != '+') newEquation.push(equation[i]);

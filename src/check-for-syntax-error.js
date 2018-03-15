@@ -13,6 +13,7 @@ Calculator.prototype.checkForSyntaxError =
 					switch(this.temporaryEquation[i]){
 						case '/':
 						case '*':
+						case '^':
 						case '+':
 						case '-':
 						case '(':	
@@ -34,10 +35,10 @@ Calculator.prototype.checkForSyntaxError =
 						case ')':	
 							if(this.temporaryEquation[i+1] != '+' & this.temporaryEquation[i+1] != '-'
 							& this.temporaryEquation[i+1] != '*' & this.temporaryEquation[i+1] != '/'
-							&this.temporaryEquation[i+1] != ')') return true;			
+							&this.temporaryEquation[i+1] != ')' & this.temporaryEquation[i+1] != '^') return true;			
 					}
 				}
-				/*Check if the next input is also an operator*/
+				/*If the next input is not an operator*/
 				else{
 					switch(this.temporaryEquation[i]){
 						case ')':
