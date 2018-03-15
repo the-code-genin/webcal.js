@@ -2,6 +2,20 @@
 Calculator.prototype.bodmas=
 	function(equation = this.temporaryEquation){
 		var newEquation = equation;
+		/*Handle square-roots in the temporary equation until none are left*/
+		function handleSquareRoot(){
+			var i = newEquation.indexOf('√');
+			if(i != -1){
+				/*If there is another square root infront of this square root*/
+				while(newEquation[i+1] == '√'){i++;}
+				if(newEquation[i+1] >= 0)var sqrt = Math.sqrt(newEquation[i+1]);
+				else sqrt = Infinity;
+				newEquation.splice(i,2,sqrt);
+				return true;
+			}
+			/*When none is found*/
+			else return false
+		}
 		/*Handle divisions in the temporary equation until none are left*/
 		function handleDivision(){
 			var i = newEquation.indexOf('/');
@@ -28,6 +42,8 @@ Calculator.prototype.bodmas=
 			else return false;
 		}
 		/*Order of operations*/
+		while(handleSquareRoot()){}
+		newEquation = this.perfect(newEquation);
 		while(handleDivision()){}
 		while(handleMultiplication()){}
 		/*Handle additions and subtractions*/

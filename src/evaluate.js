@@ -11,7 +11,7 @@ Calculator.prototype.evaluate =
 		/*Check for syntax errors errors*/
 		var check = this.checkForSyntaxError();
 		/*If an error was found*/
-		if(check) this.message = "Syn Error";
+		if(check) this.message = "Pre Syntax Error";
 		/*If no error was found then equation is valid*/
 		else{
 			/*Handle all brackets available starting from the lowests*/
@@ -39,20 +39,14 @@ Calculator.prototype.evaluate =
 					}
 				}
 			}
-			/*Remember to remove this*/
-			string = '';
-			for(i = 0;i < this.temporaryEquation.length;i++){
-				string += this.temporaryEquation[i];
-				if(i != this.temporaryEquation[i].length-1) string+=',';
-			}
-			alert(string);
+			alert("Temp equation:\n"+this.temporaryEquation);
 			/*Process the main equation after all brackets have been solved*/
 			this.temporaryEquation = this.perfect();
 			this.message = this.bodmas();
 		}
-		/*If a math error popped up*/
-		if(this.message.indexOf("Infinity") != -1) this.message = "Ma Error";
-		if(this.message.indexOf("N") != -1) this.message = "Syn Error";
+		/*If a math or internal error popped up*/
+		if(this.message.indexOf("Infinity") != -1) this.message = "Math Error";
+		if(this.message.indexOf("N") != -1) this.message = "Syntax Error";
 		/*Update the screen*/
 		this.updateScreen();
 	}
@@ -94,7 +88,10 @@ Calculator.prototype.perfect=
 						}
 					break;
 				default: 
-					if(equation[i-1] != '-' & equation[i-1] != '+') newEquation.push(equation[i]);
+					if(equation[i] == '*' | equation[i] == '/' | equation[i] == '√'){
+						newEquation.push(equation[i]);
+					}
+					else if(equation[i-1] != '-' & equation[i-1] != '+') newEquation.push(equation[i]);
 			}
 		}
 		return newEquation;
