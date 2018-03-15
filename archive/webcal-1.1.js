@@ -1,18 +1,17 @@
 /*The calculator class*/
-function Calculator(screen='',colors=['black','green']){
+function Calculator(screen=''){
 	this.equation = [''];
 	this.operators = ['(',')','/','*','+','-'];
 	this.numbers = ['.','0','1','2','3','4','5','6','7','8','9'];
 	this.message = '';
 	this.screen = screen;
-	this.colors = colors;
 	this.brackets = [];
 }
 
 /*Input a digit character*/
 Calculator.prototype.inputDigit = 
 	function(no){
-		/*Check if there is no answer of warning message*/
+		/*Check if there is no answer or warning message*/
 		if(this.message == ''){
 			var lastDigit = this.equation.length-1;
 			/*If a dot is inputted*/
@@ -171,7 +170,6 @@ Calculator.prototype.del =
 					}
 				}
 			}
-			temp = [];
 			/*Clear the message*/
 			this.message = '';
 		}
@@ -198,9 +196,11 @@ Calculator.prototype.updateScreen =
 			/*If the screen isn't superimposed by the answer or an error message*/
 			if(this.message == ''){
 				var string = '';
-				for(var i = 0;i < this.equation.length;i++){string += this.equation[i];}
-					screen.innerHTML = "<tt>"+string+"</tt>";
-					screen.scrollLeft += screen.innerHTML.length*30;
+				for(var i = 0;i < this.equation.length;i++){
+					string += this.equation[i];
+				}
+				screen.innerHTML = "<tt>"+string+"</tt>";
+				screen.scrollLeft += screen.innerHTML.length*30;
 			}
 			else{
 				screen.innerHTML = "<tt>"+this.message+"<tt>";
@@ -224,7 +224,7 @@ Calculator.prototype.evaluate =
 		/*Check for syntax errors errors*/
 		var check = this.checkForSyntaxError();
 		/*If an error was found*/
-		if(check) this.message = "Syn Error";
+		if(check) this.message = "Syntax Error";
 		/*If no error was found then equation is valid*/
 		else{
 			/*Handle all brackets available starting from the lowests*/
@@ -252,20 +252,14 @@ Calculator.prototype.evaluate =
 					}
 				}
 			}
-			/*Remember to remove this*/
-			string = '';
-			for(i = 0;i < this.temporaryEquation.length;i++){
-				string += this.temporaryEquation[i];
-				if(i != this.temporaryEquation[i].length-1) string+=',';
-			}
-			alert(string);
 			/*Process the main equation after all brackets have been solved*/
 			this.temporaryEquation = this.perfect();
 			this.message = this.bodmas();
 		}
 		/*If a math error popped up*/
-		if(this.message.indexOf("Infinity") != -1) this.message = "Ma Error";
-		if(this.message.indexOf("N") != -1) this.message = "Syn Error";
+		if(this.message.indexOf("Infinity") != -1) this.message = "Math Error";
+		if(this.message.indexOf("N") != -1) this.message = "Syntax Error";
+		if(this.message.indexOf("e") != -1) this.message = "Stack Error";
 		/*Update the screen*/
 		this.updateScreen();
 	}
