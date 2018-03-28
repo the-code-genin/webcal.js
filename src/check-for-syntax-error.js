@@ -21,7 +21,12 @@ Calculator.prototype.checkForSyntaxError =
 							& this.temporaryEquation[i+1] != '√' & this.temporaryEquation[i+1] != '(') return true;
 							/*If the upper input is also an operator*/
 							if(this.operators.indexOf(this.temporaryEquation[i+2]) != -1){
-									if(this.temporaryEquation[i+2] != '(' & this.temporaryEquation[i+2] != '√') return true;
+								if(this.temporaryEquation[i+2] != '√' & this.temporaryEquation[i+2] != '('){
+									if(this.temporaryEquation[i+1] == '(' | this.temporaryEquation[i+1] == '√'){
+										if(this.temporaryEquation[i+2] == '/' | this.temporaryEquation=='*') return true;
+									}
+									else return true;
+								}
 							}
 							break;
 						case '√':
@@ -29,7 +34,8 @@ Calculator.prototype.checkForSyntaxError =
 							& this.temporaryEquation[i+1] != '√')return true;
 							/*If the upper input is also an operator*/
 							if(this.operators.indexOf(this.temporaryEquation[i+2]) != -1){
-								if(this.temporaryEquation[i+2] != '(' & this.temporaryEquation[i+2] != '√') return true;
+								if(this.temporaryEquation[i+2] != '(' & this.temporaryEquation[i+2] != '√'
+								& this.temporaryEquation[i+2] != '+') return true;
 							}
 							break;
 						case ')':	

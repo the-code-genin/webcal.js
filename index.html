@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Webcal.js javascript calculator library</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="uft-8"/>
+		<meta name="description" content="Webcal.js is an open-source and lightweight javascript library for creating beautiful and powerful GUI browser calculators without writing too much lines of code"/>
+		<link rel="stylesheet" href="docs/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="docs/css/layout.css"/>
+		<script src="docs/js/jquery.min.js"></script>
+		<script src="docs/js/bootstrap.min.js"></script>
+		<script src="docs/js/layout.js"></script>
+	</head>
+	<body>		
+		<div class="container">
+			<div class="jumbotron">
+				<header class="row">
+					<div class="col-sm-12">
+						<h1 class="text-center"><u>Webcal.js</u><br/>
+						<small>Create beautiful and powerful GUI calculators.</small>
+						</h1>
+					</div>
+				</header>
+			</div>
+			<nav class="row hidden-sm">
+				<div class="col-sm-12">
+					<select id="nav-select" class="form-control">
+						<option value="home" selected>Home</option>
+						<option value="download">Download</option>
+						<option value="documentation">Documentation</option>
+						<option value="examples">Examples</option>
+					</select>
+				</div>
+			</nav>
+			<div class="row">
+				<nav class="col-sm-3 hidden-xs visible-sm visible-md visible-lg">
+					<div class="list-group">
+						<a href="" class="list-group-item active">Home</a>
+						<a href="docs/downloads.html" class="list-group-item">Download</a>
+						<a href="docs/documentation.html" class="list-group-item">Documentation</a>
+						<a href="docs/examples.html" class="list-group-item">Examples</a>
+					</div>
+				</nav>
+				<div class="col-sm-9">
+					<article>
+						<section>
+							<h2>What is webcal.js?</h2>
+							<p class="lead">Webcal.js is an easy to use javascript 
+							library for creating beautiful and powerful 
+							GUI calculators without writing too much 
+							javasript, allowing you to focus more on 
+							design.
+							</p>
+						</section>
+					
+						<section>
+							<h2>Installation</h2>
+							<p class="lead">
+							The library is lightweight and independent therefore 
+							you only need to include the library without worrying about 
+							it interferring with other libraries present on the webpage.
+							</p>
+						
+							<p class="lead">
+							To install, download the latest version of the library and include 
+							it in your webpage using a script tag, i.e:
+							</p>
+						
+							<code>
+							&lt;script src="<i>script url</i>"&gt;&lt;&#47;script&gt;
+							</code>
+							
+							<p class="lead">
+							Download the latest version of webcal.js <a title="download webcal.js library" href="docs/downloads.html">here</a>.
+							</p>
+						</section>
+					
+						<section>
+							<h2>How to use</h2>
+							<p class="lead">
+							After including the library in your webpage, 
+							create a new calculator object and pass the id of the output
+							screen as an argument, like below:
+							</p>
+							<code>
+							new calc = new Calculator('#outputsreen');
+							</code>
+							<p class="lead">
+							Then map the calculator's controls(methods) to html elements. i.e
+							</p>
+							<code>
+							&lt;button onclick="calc.inputDigit('9')"&gt;9&lt;&#47;button&gt;
+							</code>
+							<p class="lead">
+							Check the full documentation <a href="docs/documentation.html">here</a>.
+							</p>
+							<p class="lead">
+							You can also see some working demonstrations of the 
+							library <a title="see some demonstrations of webcal.js" href="docs/examples.html">here</a>.
+							</p>
+						</section>
+					</article>
+					
+					<footer>
+						<p class="lead">&copy;2018 Adekunle Mohammed.</p>
+						<p class="text-center text-muted">Designed by Adekunle Mohammed.</p>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

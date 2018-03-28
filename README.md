@@ -5,6 +5,8 @@ An easy to use javascript library for creating quick and beautiful GUI calculato
 
 With this lightweight and easy to use javascript library, you don't need to be an experienced programmer to embed a working GUI calculator on your webpages.
 Being an independent library you don't need the knowledge of other libraries like jquery, angular etc to implement it.
+
+You should visit the github page for a better documentation of the project.
 # Installation
 
 To install the library simply include it in your webpage using the script tag.
