@@ -16,7 +16,7 @@ You should visit the github page for a better documentation of the project.
 To install the library simply include it in your webpage using the script tag.
 
 ```HTML
-<script src="library url"></script>
+<script src="library_url"></script>
 ```
 
 # How To Use
@@ -69,4 +69,4 @@ Below are the calculator object's methods.
   This method evaluates the input and returns the output as either an error message or an answer.
 
 # Contributors
-  [Iyiola-am](https://github.com/Iyiola-am]
+  [Iyiola-am](https://github.com/Iyiola-am)
