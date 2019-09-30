@@ -1,27 +1,39 @@
-# webcal.js
+# WEBCAL.JS
 
-An easy to use javascript library for creating quick and beautiful GUI calculators
+An easy to use javascript library for creating quick and beautiful GUI calculators.
+
+**Note::** This project is no longer being maintained.
+
 # Description
 
 With this lightweight and easy to use javascript library, you don't need to be an experienced programmer to embed a working GUI calculator on your webpages.
 Being an independent library you don't need the knowledge of other libraries like jquery, angular etc to implement it.
 
 You should visit the github page for a better documentation of the project.
+
 # Installation
 
 To install the library simply include it in your webpage using the script tag.
-**<script src="library url"></script>**
+
+```HTML
+<script src="library url"></script>
+```
+
 # How To Use
 
 After including the library in your webpage, in another script tag create a new calculator object passing the the ID of the output element(**A paragraph or div is recommended**) as an argument. i.e
 
-__<script>var Calc = new Calculator(output ID);<script>__
+```HTML
+<script>var Calc = new Calculator(output ID);<script>
+ ```
 
 Then map the calculator object's methods to html elements. i.e
 
-__\<button onclick="Calc.inputDigit('9')">9\</button>__
+```HTML
+ <button onclick="Calc.inputDigit('9')">9</button>
 
-__\<button onclick="Calc.inputOperator('+')">+\</button>__
+ <button onclick="Calc.inputOperator('+')">+</button>
+```
 
 Check out the examples to see working demonstrations.
 
@@ -55,6 +67,6 @@ Below are the calculator object's methods.
 - **Calculator.evaluate();**
   
   This method evaluates the input and returns the output as either an error message or an answer.
-  
+
 # Contributors
-  @Yogmemo
+  [Iyiola-am](https://github.com/Iyiola-am]
